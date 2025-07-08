@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mueblería Chavelita - Muebles en Huaycán</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    .animacion-flotante {
+      animation: flotante 3s ease-in-out infinite;
+    }
+    @keyframes flotante {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-orange-50 to-orange-100 text-slate-800">
+  <!-- Encabezado -->
+  <header class="bg-gradient-to-r from-orange-500 to-yellow-400 text-white p-6 shadow-lg">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-bold tracking-wide drop-shadow">Mueblería Chavelita</h1>
+      <nav class="space-x-6 text-lg">
+        <a href="#productos" class="hover:underline hover:text-yellow-100">Productos</a>
+        <a href="#ubicacion" class="hover:underline hover:text-yellow-100">Ubicación</a>
+        <a href="#contacto" class="hover:underline hover:text-yellow-100">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero principal -->
+  <section class="relative overflow-hidden bg-orange-100">
+    <div class="max-w-6xl mx-auto px-6 py-16 flex flex-col-reverse md:flex-row items-center gap-6">
+      <div class="md:w-1/2 animate-fade-in">
+        <h2 class="text-5xl font-extrabold mb-6 text-orange-700 leading-tight">Hecho con orgullo en Huaycán 🇵🇪</h2>
+        <p class="text-lg mb-6">Muebles de melamina con diseño, durabilidad y un toque peruano auténtico. Personalizados para tu hogar y tu estilo de vida.</p>
+        <a href="https://wa.me/51902612351" target="_blank" class="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white text-lg rounded shadow-lg hover:bg-green-700 transition-all animate-bounce">
+          <i class="fab fa-whatsapp"></i> Escríbenos al WhatsApp
+        </a>
+      </div>
+      <div class="md:w-1/2">
+        <img src="https://i.imgur.com/5XWUwEM.jpg" alt="Casa peruana con muebles" class="rounded-2xl shadow-2xl animacion-flotante">
+      </div>
+    </div>
+  </section>
+
+  <!-- Productos -->
+  <section id="productos" class="bg-white py-24 px-6">
+    <div class="max-w-6xl mx-auto text-center">
+      <h3 class="text-5xl font-extrabold text-orange-600 mb-8">Nuestros productos</h3>
+      <p class="text-xl text-slate-600 mb-16">Diseñados a medida con materiales de calidad, listos para transformar tu espacio.</p>
+      <div id="lista-productos" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 text-lg"></div>
+    </div>
+  </section>
+
+  <!-- Ubicación y horario -->
+  <section id="ubicacion" class="bg-gradient-to-tr from-orange-200 to-yellow-100 py-20 px-6 text-center">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-4xl font-bold mb-6 text-orange-800">¿Dónde encontrarnos? 📍</h3>
+      <p class="text-xl font-medium">HUAYCÁN - ATE - ZONA D - UCV 65 - LOTE 47</p>
+      <p class="text-md italic mb-4">Referencia: a 1 cuadra hacia adentro del paradero Las Malvinas, cerca a la Av. 15 de Julio</p>
+      <p class="text-lg font-semibold">🕒 Horario:</p>
+      <p class="text-lg">Lunes a Viernes: 9:00 a.m. - 7:00 p.m.</p>
+      <p class="text-lg mb-6">Sábados y Domingos: previa coordinación</p>
+      <a href="https://maps.app.goo.gl/88exmgxwvqvJmWZ77" target="_blank" class="inline-block mt-4 px-6 py-3 bg-blue-600 text-white rounded shadow hover:bg-blue-700">
+        Ver en Google Maps
+      </a>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <footer id="contacto" class="bg-orange-500 text-white text-center py-12">
+    <p class="text-2xl font-semibold mb-4">¿Listo para amoblar tu espacio?</p>
+    <a href="https://wa.me/51902612351" target="_blank" class="inline-block px-8 py-4 bg-green-600 rounded-full text-white text-lg font-bold shadow-xl hover:bg-green-700">
+      <i class="fab fa-whatsapp"></i> WhatsApp 902 612 351
+    </a>
+    <p class="mt-8 text-sm">© 2024 Mueblería Chavelita - Hecho en Perú 🇵🇪</p>
+  </footer>
+
+  <script src="js/tienda.js"></script>
+</body>
+</html>

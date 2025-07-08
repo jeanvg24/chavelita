@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel de Administración</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-orange-50 min-h-screen p-6">
+  <div id="login" class="max-w-md mx-auto bg-white shadow-md rounded-xl p-6">
+    <h2 class="text-2xl font-bold mb-4 text-center">Acceso Administrador</h2>
+    <input id="password" type="password" placeholder="Contraseña" class="w-full border p-2 rounded mb-4">
+    <button onclick="login()" class="w-full bg-orange-500 text-white font-bold py-2 rounded">Entrar</button>
+  </div>
+
+  <div id="panel" style="display:none">
+    <div class="max-w-6xl mx-auto">
+      <h1 class="text-3xl font-bold mb-6">Panel de Administración</h1>
+      <form id="form-producto" class="grid grid-cols-1 md:grid-cols-2 gap-4" enctype="multipart/form-data">
+        <input required name="nombre" placeholder="Nombre" class="border p-2 rounded">
+        <input required name="precio" type="number" placeholder="Precio" class="border p-2 rounded">
+        <input required name="stock" type="number" placeholder="Stock" class="border p-2 rounded">
+
+        <!-- Imagen principal -->
+        <input required type="file" name="imagen" accept="image/*" class="border p-2 rounded">
+
+        <!-- 5 imágenes adicionales -->
+        <input type="file" name="imagenExtra1" accept="image/*" class="border p-2 rounded">
+        <input type="file" name="imagenExtra2" accept="image/*" class="border p-2 rounded">
+        <input type="file" name="imagenExtra3" accept="image/*" class="border p-2 rounded">
+        <input type="file" name="imagenExtra4" accept="image/*" class="border p-2 rounded">
+        <input type="file" name="imagenExtra5" accept="image/*" class="border p-2 rounded">
+
+        <!-- Eliminado: campo de WhatsApp -->
+        <!-- <input required name="whatsapp" placeholder="WhatsApp" class="border p-2 rounded"> -->
+
+        <textarea required name="descripcion" placeholder="Descripción" class="border p-2 rounded md:col-span-2"></textarea>
+        <button type="submit" class="md:col-span-2 bg-green-600 text-white font-bold py-2 rounded">Guardar producto</button>
+      </form>
+
+      <div class="mt-10">
+        <h2 class="text-2xl font-semibold mb-4">Productos actuales</h2>
+        <div id="productos" class="grid gap-6"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/admin.js"></script>
+</body>
+</html>
