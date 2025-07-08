@@ -25,7 +25,7 @@ fetch("/api/productos")
       contenedor.appendChild(div);
     });
 
-    window.productosChavelita = productos; // para galería
+    window.productosChavelita = productos;
   });
 
 // --- Galería modal ---
@@ -75,4 +75,39 @@ function anteriorImagen() {
   const total = 1 + (producto.imagenesExtras?.length || 0);
   imagenIndex = (imagenIndex - 1 + total) % total;
   mostrarImagen();
+}
+
+// === Soporte para deslizar con el dedo o el mouse ===
+let touchStartX = 0;
+let touchEndX = 0;
+
+const galeria = document.getElementById("galeriaImagen");
+
+galeria.addEventListener("touchstart", (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+galeria.addEventListener("touchend", (e) => {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+galeria.addEventListener("mousedown", (e) => {
+  touchStartX = e.screenX;
+});
+
+galeria.addEventListener("mouseup", (e) => {
+  touchEndX = e.screenX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const diff = touchStartX - touchEndX;
+  if (Math.abs(diff) > 50) {
+    if (diff > 0) {
+      siguienteImagen();
+    } else {
+      anteriorImagen();
+    }
+  }
 }
